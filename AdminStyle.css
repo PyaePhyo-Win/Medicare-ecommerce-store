@@ -1,0 +1,640 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+.updatebody{
+    background-color: #E1EBEE;
+}
+/* Register Form and Login Form */
+.register-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E1EBEE;
+}
+.adminlogin{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background: #E1EBEE;
+}
+.regcontainer{
+    width: 100%;
+    max-width: 480px;
+    background: white;
+    padding: 28px;
+    margin: 10px 28px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0, 0, 0.5);
+}
+.loginContainer{
+    width: 100%;
+    max-width: 480px;
+    background: white;
+    padding: 28px;
+    margin: 0 28px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0, 0, 0.5);
+}
+.loginContainer .title-form, .regcontainer .title-form{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 10px;
+    color: #8BC6EC;
+    border-bottom: solid 1px #8BC6EC;
+}
+.admininfo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: solid 1px #8BC6EC;
+}
+.inputbox:nth-child(2n),.inputbox-login:nth-child(2n){
+    justify-content: end;
+}
+.inputbox,.inputbox-login{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding-bottom: 15px;
+}
+.inputbox>label,.inputbox-login>label{
+    width: 95%;
+    color: #8BC6EC;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px 0;
+}
+.inputbox>input,.inputbox-login>input{
+    height: 40px;
+    width: 95%;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #8BC6EC;
+    background-color: rgba(255,255, 255, 0);
+    padding: 0 10px;
+    color: #8BC6EC;
+}
+.inputbox>input::placeholder, .inputbox-login>input::placeholder{
+    color: #8BC6EC;
+}
+.inputbox>textarea{
+    height: 40px;
+    width: 95%;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #8BC6EC;
+    color: white;
+    background-color: rgba(255,255, 255, 0);
+    padding: 0 10px; 
+}
+.inputbox>textarea::placeholder{
+    color: #8BC6EC;
+}
+.terms{
+    margin: 15px 0;
+    color: #8BC6EC;
+    text-align: center;
+}
+.terms label{
+    padding: 0 20px 0 5px;
+}
+.form-button>input{
+    cursor: pointer;
+}
+.form-button{
+   
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.form-button>input{
+    width: 100%;
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color:#8BC6EC ;
+    transition: all 0.5s;
+}
+.form-button>input:hover{
+    background-color: white;
+    color: #8BC6EC;
+    border: 2px solid #8BC6EC;
+}
+.form-link{
+    text-align: center;
+}
+.form-link a{
+    text-decoration: none;
+    color: #8BC6EC ;
+    transition: all 0.5s;
+}
+.form-link a:hover{
+    color: burlywood;
+}
+/* Admin Dashboard */
+.container{
+    position: relative;
+    width: 100%;
+}
+.sidebar{
+    position:fixed;
+    width: 280px;
+    height: 100%;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    overflow-x: hidden;
+    box-shadow: 0 4px 8px 0;
+    z-index: 2;
+    overflow-y: scroll;
+}
+.sidebar::-webkit-scrollbar{
+    width: 0;
+}
+.sidebar ul li{
+    width: 100%;
+    list-style: none;
+}
+.sidebar ul li:first-child{
+    line-height: 70px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    font-weight: 700;
+    border-bottom: 5px solid white;
+}
+.sidebar ul li:hover{
+    background: rgba(255,255, 255, 0.5);
+}
+.sidebar ul li:first-child:hover{
+    background: none;
+}
+.sidebar ul li a{
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.sidebar ul li a i{
+    min-width: 60px;
+    font-size: 24px;
+    text-align: center;
+}
+.sidebar .title{
+    padding: 0 10px;
+    font-size: 14pt;
+}
+.main{
+    position: absolute;
+    width: calc(100% - 280px);
+    min-height: 100vh;
+    left: 280px;
+    background: #E1EBEE;
+}
+.admin-top-bar{
+    position: fixed;
+    width: calc(100%-280px);
+    display: grid;
+    grid-template-columns: 20fr 0.4fr 1fr;
+    grid-gap:5px;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0, 0, 0.5);
+    z-index: 1;
+    height: 75px;
+    background: white;
+    color: #8BC6EC;
+}
+.admin-top-bar .searchbar{
+    position: relative;
+    max-width: 400px;
+    margin-right: 10px;
+}
+.searchbar input{
+    width: 100%;
+    min-width: 128px;
+    height: 40px;
+    padding: 0 40px;
+    border: 1px solid #8BC6EC;
+    font-size: 13pt;
+    outline: none;
+    border-radius: 5px;
+}
+.searchbar i{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
+.user-admin{
+    position: relative;
+    height: 75px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fa-bell, .user-admin i{
+    font-size: 16pt;
+}
+.cards{
+    margin-top: 75px;
+    width: 100%;
+    padding: 35px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+.cards .card{
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0, 0, 0.5);
+    padding: 20px 5px;
+}
+.cards .card .card-number{
+    font-size: 20pt;
+    font-weight: 600;
+}
+.cards .card .card-name{
+    font-size: 12pt;
+    font-weight: 600;
+}
+.cards .card .card-icon{
+    font-size: 20pt;
+}
+.cards .card:nth-child(1){
+    border-left: 5px solid green;
+    color: green;
+}
+.cards .card:nth-child(2){
+    border-left: 5px solid #9599E2;
+    color: #9599E2;
+}
+.cards .card:nth-child(3){
+    border-left: 5px solid rebeccapurple;
+    color: rebeccapurple;
+}
+.cards .card:nth-child(4){
+    border-left: 5px solid red;
+    color: red;
+}
+.cards .card:nth-child(5){
+    border-left: 5px solid burlywood;
+    color: burlywood;
+}
+.cards .card:nth-child(6){
+    border-left: 5px solid blue;
+    color: blue;
+}
+.cards .card:nth-child(7){
+    border-left: 5px solid deeppink;
+    color: deeppink;
+}
+.cards .card:nth-child(8){
+    border-left: 5px solid darkslateblue;
+    color: darkslateblue;
+}
+/* Tables of Admin DashBoard and Admin Pages */
+.admin-tables{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap:20px;
+    align-items: self-start;
+    padding: 0 20px 20px 20px;
+}
+ .promotion-products, .admin-tables .brand, .admin-tables .supplier{
+    width: 100%;
+    background: white;
+    min-height: 350px;
+    box-shadow: 0 4px 8px 0 rgba(0,0, 0, 0.5);
+    padding: 10px;
+
+}
+ .admin-tables .supplier{
+    overflow-x: auto;
+ }
+ .promotion-products .heading,.heading-pending{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #8BC6EC;
+    margin-bottom: 20px;
+}
+.brand .heading, .admin-tables .supplier .heading{
+    display: flex;
+    align-items: center;
+    color: #8BC6EC;
+    margin-bottom: 20px;
+}
+.btnViewall{
+    background: #8BC6EC;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.btnViewall:hover{
+    background: black;
+    color:#8BC6EC;
+    border: 1px solid #8BC6EC;
+}
+.tbl-lastorders, .tbl-promotionproducts, .tbl-brand, .tbl-supplier{
+    width: 100%;
+    border-collapse: collapse;
+}
+.tbl-lastorders thead td, .tbl-promotionproducts thead td, 
+.tbl-brand thead td, .tbl-supplier thead td{
+    text-align: left;
+    font-weight: 600;
+}
+.tbl-lastorders tr, .tbl-promotionproducts tr,.tbl-brand tr, .tbl-supplier tr{
+    border-bottom: 1px solid #8BC6EC;
+    color: #444;
+}
+.tbl-supplier tr{
+    overflow-x: hidden;
+}
+.tbl-lastorders tbody tr:hover, .tbl-promotionproducts tbody tr:hover, 
+.tbl-brand tbody tr:hover, .tbl-supplier tbody tr:hover{
+    background-color: #444;
+    color: white;
+}
+.tbl-lastorders tbody tr:last-child, .tbl-promotionproducts tbody tr:last-child{
+    border-bottom: none; 
+}
+.tbl-lastorders td, .tbl-promotionproducts td, .tbl-brand td, .tbl-supplier td{
+    padding: 10px 5px;
+}
+.tbl-lastorders td i,.tbl-promotionproducts td i,.tbl-brand td i, .tbl-supplier td i{
+    color: white;
+    padding: 10px;
+    border-radius: 50px;
+}
+.tbl-lastorders td .fa-pen-to-square, .tbl-promotionproducts td .fa-pen-to-square,
+.tbl-brand td .fa-pen-to-square, .tbl-supplier td .fa-pen-to-square{
+    background: #8BC6EC;
+}
+.tbl-lastorders td .fa-trash, .tbl-promotionproducts td .fa-trash,
+.tbl-brand td .fa-trash, .tbl-supplier td .fa-trash{
+    background: red;
+}
+.tbl-lastorders tbody td:last-child , .tbl-promotionproducts tbody td:last-child,
+.tbl-brand tbody td:last-child, .tbl-supplier tbody td:last-child{
+    white-space: nowrap;
+}
+.tbl-photo{
+    width: 50px;
+    height: 50px;
+}
+
+/* Footer of Admin Dashboard */
+.admin-footer{
+    width: 100%;
+    height: 50px;
+    background: #9599E2;
+    background-image: linear-gradient(135deg, #9599E2 0%, #8BC6EC 100%);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-size: 14pt;
+    font-weight: 600;
+}
+
+/* Brand Form , Supplier Form */
+.brandContainer, .SupContainer{
+    margin-top: 90px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.brandContainer .addbrand, .SupContainer .addsupplier{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+.brandContainer .addbrand .title-form, .SupContainer .addsupplier .title-form{
+    color: #8BC6EC;
+    text-align: center;
+    padding: 20px;
+}
+.addbrand .brandform .brandinfo label, .addsupplier .supform .supinfo label{
+    color: #8BC6EC;
+    font-weight: 600;
+}
+.addbrand .brandform .brandinfo input, .addsupplier .supform .supinfo input, 
+.addsupplier .supform .supinfo select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 3px solid #8BC6EC;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 5px;
+    color: #8BC6EC;
+}
+.addbrand .brandform .brandinfo input::placeholder, .addsupplier .supform .supinfo input::placeholder, 
+.addsupplier .supform .supinfo select::placeholder{
+    color: #8BC6EC;
+}
+.addbrand .brandform .brandinfo input:focus, .addsupplier .supform .supinfo input:focus{
+    background-color: rgba(0,0, 0, 0.4);
+}
+.addbrand .brandform .brandinfo input:focus::placeholder, .addsupplier .supform .supinfo input:focus::placeholder{
+    color: white;
+}
+.addbrand .Brandform-button, .addsupplier .Supform-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addbrand .Brandform-button input, .addsupplier .Supform-button input{
+    background: #8BC6EC;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #8BC6EC;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14pt;
+    font-weight: 600;
+}
+.addbrand .Brandform-button input:hover, .addsupplier .Supform-button input:hover{
+    background: black;
+    color: #8BC6EC;
+    border: 1px solid #8BC6EC;
+}
+/* Data Update Pages */
+.Updateheader{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content:space-between;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0, 0, 0.5);
+    color: #8BC6EC;
+}
+.Updateheader a{
+    background: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px 0 rgba(0,0, 0, 0.5);
+    margin-left: 50px;
+    border-radius: 50px;
+}
+.Updateheader a i{
+    color: #8BC6EC;
+    font-size: 24pt;
+    
+}
+.Updateheader .header-right{
+    background: white;
+    margin-right: 5px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.Updateheader .header-right i{
+    font-size: 12pt;
+}
+.Updateheader h2{
+    font-size: 30pt;
+}
+/* Media queries */
+@media(max-width: 1096px){
+    .sidebar{
+        width: 60px;
+    }
+    .main{
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+}
+@media(max-width: 890px){
+    .cards{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .admin-tables .supplier{
+        overflow-x: auto;
+    }
+
+}
+@media(max-width:714px){
+    .cards{
+        grid-template-columns: 1fr 1fr;
+    }
+    .tbl-lastorders tbody td:nth-child(4),.tbl-promotionproducts tbody td:nth-child(4),
+    .tbl-lastorders thead td:nth-child(4),.tbl-promotionproducts thead td:nth-child(4){
+        display: none;
+    }
+    .admin-footer{
+        font-size: 80%;
+    }
+}
+@media(max-width: 586px){
+    .tbl-lastorders,.tbl-promotionproducts,.tbl-brand{
+        font-size: 70%;
+        padding: 10px;
+        min-height: 200px;
+    }
+    .last-orders .heading,.promotion-products .heading,.tbl-brand .heading{
+        font-size: 70%;
+    }
+    .cards .card .card-name{
+        font-size: 90%;
+    }
+    .cards .card .card-number{
+        font-size: 90%;
+    }
+    .cards .card .card-icon{
+        font-size: 120%;
+    }
+    .cards,.admin-tables{
+        padding: 10px;
+    }
+    .fa-bell, .user-admin i{
+        font-size: 110%;
+    }
+}
+@media(max-width: 463px){
+    .last-orders,.promotion-products,.brand{
+        overflow-x: auto;
+    }
+    .tbl-lastorders, .tbl-promotionproducts,.tbl-brand{
+        min-width: 250px;
+    }
+    .sidebar ul li a i{
+        font-size: 110%;
+        min-width: 50px;
+    }
+    .sidebar{
+        width: 50px;
+    }
+    .main{
+        width: calc(100% - 50px);
+        left: 50px;
+    }
+    .searchbar input{
+        padding: 0 20px;
+    }
+    .tbl-photo{
+        width: 40px;
+        height: 40px;
+    }
+    .regcontainer,.loginContainer{
+        min-width: 280px;
+    }
+    .inputbox,.inputbox-login{
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .inputbox:nth-child(2n),.inputbox-login:nth-child(2n){
+        justify-content: space-between;
+    }
+    .admininfo{
+        max-height: 380px;
+        overflow: auto;
+    }
+    .admininfo::-webkit-scrollbar{
+        width: 0;
+    }
+}
+@media(max-width: 366px){
+    .cards{
+        grid-template-columns: 1fr;
+    }
+}
